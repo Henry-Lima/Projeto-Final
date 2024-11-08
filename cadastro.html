@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Projeto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Cadastro de Projeto</h2>
+    <form id="formProjeto">
+        <div class="form-group">
+            <label id="nome">Nome do Projeto</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite o nome do projeto" required>
+        </div>
+        
+        <div class="form-group">
+            <label id="descricao">Descrição</label>
+            <textarea class="form-control" id="descricao" rows="3" placeholder="Descrição do projeto" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label id="data">Data do Projeto</label>
+            <input type="date" class="form-control" id="data" required>
+        </div>
+        
+        <div class="form-group">
+            <label id="funcionarios">Funcionários</label>
+            <input type="text" class="form-control" id="funcionarios" placeholder="Digite os nomes dos funcionários" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Salvar Projeto</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js">
+
+let cadastro = async() => {
+    let nome = document.getElementById('nome').value
+    let descricao =  document.getElementById('descricao').value
+    let data =  document.getElementById('data').value
+    let funcionarios =  document.getElementById('funcionario').value
+    let final = await fetch('https://3031/salvar' + nome + "/" + descricao + "/" + data + "/" + funcionarios + "/"  )
+} 
+    
+</script>
+
+</body>
+</html>
