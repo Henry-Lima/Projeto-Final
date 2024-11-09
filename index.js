@@ -56,10 +56,10 @@ app.get("/mostrar", async function (req, res) {
 });
 
 // Projeto.create({
-//   nome: "Jonh Jones",
-//   descricao: "Projeto de arquitetura urbana rudimentar",
-//   data:"24-Oct-2024",
-//   funcionarios:"Darlan, Bruno, Julia, Kauê e Mago"
+//   nome: "Stuart lirou",
+//   descricao: "rato",
+//   data:"30-Nov-2022",
+//   funcionarios:"rato adotado"
 // });
 
 
@@ -70,6 +70,7 @@ app.get("/salvar/:nome/:descricao/:data/:funcionarios", (req, res) => {
     data: req.params.data,
     funcionarios: req.params.funcionarios,
   })
+  res.send('seu cu darlan');
 
   
 });

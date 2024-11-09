@@ -31,22 +31,25 @@
             <input type="text" class="form-control" id="funcionarios" placeholder="Digite os nomes dos funcionários" required>
         </div>
         
-        <button type="submit" class="btn btn-primary">Salvar Projeto</button>
+        <button onclick="cadastro()" class="btn btn-primary">Salvar Projeto</button>
     </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="index.js">
-
-let cadastro = async() => {
-    let nome = document.getElementById('nome').value
-    let descricao =  document.getElementById('descricao').value
-    let data =  document.getElementById('data').value
-    let funcionarios =  document.getElementById('funcionario').value
-    let final = await fetch('https://3031/salvar' + nome + "/" + descricao + "/" + data + "/" + funcionarios + "/"  )
-} 
-    
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script> -->
+<script>
+    const cadastro = async () => {
+        let nome = document.getElementByid("nome").value
+        let descricao =  document.getElementByid("descricao").value
+        let data =  document.getElementByid("data").value
+        let funcionarios =  document.getElementByid("funcionario").value
+        let final = await fetch(`http://localhost:3031/salvar/${nome}/${descricao}/${data}/${funcionarios}`)
+            .then((dados) => {
+                console.log(dados);
+            }).catch((err) => {
+                console.log(err);
+            })
+    }    
 </script>
 
 </body>
